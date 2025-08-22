@@ -1,4 +1,7 @@
 package OOP.ExceptionHandling;
 
-public class Myexception {
+public class Myexception extends Exception{
+    Myexception(String msg){
+        super(msg);
+    }
 }

@@ -1,23 +1,33 @@
 package OOP.Comaprators;
 
-public class Student implements Comparable<Student> {
-    int roll_no;
-    float marks;
+import java.util.Arrays;
+import java.util.Comparator;
 
-    public Student(int roll_no, float marks) {
-        this.roll_no = roll_no;
-        this.marks = marks;
-    }
+public class Main {
+    public static void main(String[] args) {
+        Student kunal = new Student(12, 89.76f);
+        Student rahul = new Student(5, 99.52f);
+        Student arpit = new Student(2, 95.52f);
+        Student karan = new Student(13, 77.52f);
+        Student sachin = new Student(9, 96.52f);
 
-    @Override
-    public int compareTo(Student o) {
-        //return difference
-        //also this function is used in arrays.sort()
-        int diff= (int)(this.marks-o.marks);
-        return diff;
-    }
+        Student[] list = {kunal, rahul, arpit, karan, sachin};
 
-    public String toString(){
-        return marks+" "+roll_no;
+        System.out.println(Arrays.toString(list));
+        Arrays.sort(list);
+        System.out.println(Arrays.toString(list));
+
+        //more ways to sort your way
+
+        //by passing comparator in the parameter
+        Arrays.sort(list, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return (int)(o1.marks-o2.marks);
+            }
+        });
+
+        //can also use lamda expressions for the comparator
+        Arrays.sort(list,(a,b) ->  (int)(a.marks-b.marks));
     }
 }
