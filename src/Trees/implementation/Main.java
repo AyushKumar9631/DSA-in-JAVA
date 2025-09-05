@@ -21,16 +21,20 @@ public class Main {
 //        tree2.display();
 //        System.out.println(tree2.balanced());
 
-        AVL tree = new AVL();
+//        AVL tree = new AVL();
 //        int[] nums={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
 //        tree.populate(nums);
 //        System.out.println(tree.balanced());
 //        tree.display();
 
-        for (int i = 1; i < 1000; i++) {
-            tree.insert(i);
-        }
-        System.out.println(tree.balanced());
-        tree.display();
+//        for (int i = 1; i < 1000; i++) {
+//            tree.insert(i);
+//        }
+//        System.out.println(tree.balanced());
+//        tree.display();
+
+        int[] arr={3,8,7,6,-2,-8,4,9};
+        SegmentTree tree= new SegmentTree(arr);
+        System.out.println(tree.query(1,6));
     }
 }
