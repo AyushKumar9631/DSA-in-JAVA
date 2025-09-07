@@ -1,0 +1,10 @@
+Hii! This would be written in file if my program works.
+This particular line is written using FileWriter
+
+
+This Paragraph is written using PrintWriter class
+It takes printWriter as input in constructor and has print and println functions
+
+
+This para is written via BufferedReader class
+This class also provides extra methods but i will be using PrintWriter more
