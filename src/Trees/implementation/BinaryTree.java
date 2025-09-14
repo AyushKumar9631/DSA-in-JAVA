@@ -1,7 +1,6 @@
 package Trees.implementation;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class BinaryTree {
     private Node root;
@@ -109,5 +108,27 @@ public class BinaryTree {
         postorder(node.left);
         postorder(node.right);
         System.out.print(node.value +" ");
+    }
+
+    public List<List<Integer>> BFS(){
+        List<List<Integer>> list= new ArrayList<>();
+        if(root==null) return list;
+        Queue<Node> que= new LinkedList<>();
+        que.add(root);
+        BFS(que,list);
+        return list;
+    }
+    public void BFS(Queue<Node> que, List<List<Integer>> list){
+        if(que.isEmpty()) return;
+        Queue<Node> nque= new LinkedList<>();
+        List<Integer> curr= new ArrayList<>();
+        while(!que.isEmpty()){
+            Node temp=que.remove();
+            curr.add(temp.value);
+            if(temp.left!=null) nque.add(temp.left);
+            if(temp.right!=null) nque.add(temp.right);
+        }
+        list.add(curr);
+        BFS(nque, list);
     }
 }

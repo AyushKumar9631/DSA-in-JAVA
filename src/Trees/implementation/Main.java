@@ -1,13 +1,24 @@
 package Trees.implementation;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+
+
 
 public class Main {
     public static void main(String[] args) {
-//        BinaryTree bt= new BinaryTree();
-//        Scanner sc= new Scanner(System.in);
-//        bt.populate(sc);
+        BinaryTree bt= new BinaryTree();
+        Scanner sc= new Scanner(System.in);
+        bt.populate(sc);
+        List<List<Integer>> res= bt.BFS();
+        for(List<Integer> i:res){
+            System.out.println(Arrays.toString(i.toArray()));
+//            for(int j: i){
+//                System.out.println();
+//            }
+        }
+
 //        bt.display();
 
 //        BST tree1= new BST();
@@ -33,8 +44,8 @@ public class Main {
 //        System.out.println(tree.balanced());
 //        tree.display();
 
-        int[] arr={3,8,7,6,-2,-8,4,9};
-        SegmentTree tree= new SegmentTree(arr);
-        System.out.println(tree.query(1,6));
+//        int[] arr={3,8,7,6,-2,-8,4,9};
+//        SegmentTree tree= new SegmentTree(arr);
+//        System.out.println(tree.query(1,6));
     }
 }
