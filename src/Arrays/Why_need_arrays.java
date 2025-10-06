@@ -26,7 +26,7 @@ public class Why_need_arrays {
 
         // How it works?
         int[] array; // initialization of variable array in stack memory, currently not pointing towards anything. (Happens at compile time)
-        array= new int[6]; // creation of actual object in heap memory. (happens at runtime)
+        array= new int[6]; // creation of actual object in Heap memory. (happens at runtime)
 
         System.out.println(rnos2[3]); // 67
 
