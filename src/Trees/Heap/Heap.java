@@ -15,6 +15,10 @@ public class Heap<T extends Comparable<T>>{
         }
     }
 
+    public int size(){
+        return list.size();
+    }
+
     private void swap(int i, int j){
         T temp=list.get(i);
         list.set(i,list.get(j));
